@@ -50,11 +50,3 @@ namespace print{
 }
 
 #define elements(a) sizeof(a)/sizeof(a[0])
-
-int main(){
-	print::binx<6>(0b10101010);
-	putchar('\n');
-	print::bin("Hai",3);
-	putchar('\n');
-	print::hex("Hai",3);
-}
