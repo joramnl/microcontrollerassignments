@@ -1,5 +1,5 @@
 
-main:
+main: firstnames.o lastnames.o
 	g++ -std=c++11 -Wall -Werr -o generate_name lastnames.o firstnames.o main.cpp
 
 firstnames.h: names2c.py firstnames.txt
