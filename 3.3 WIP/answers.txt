@@ -1,0 +1,15 @@
+ADC
+
+1. Which pins on the Nucleo F303RE can be used to read analog values?
+2. As soon as the ‘adc’ pins is read, what is the minimum and maximum voltage that will be measured?
+3. How many bits does the ADC of the Nucleo F303RE have? Check the datasheet!
+4. Which value corresponds to the minimum voltage and which value corresponds to the maximum voltage of the ‘adc’ pins?
+
+Thermistor
+
+1. What is the resistance of the thermistor at 25 degrees Celsius?
+	according to adafruite the Thermistor has a resistance of 1kΩ ±1% when at 25°C
+2. Which reference resistor are you going to use (multiple answers possible)?
+	
+3. Draw your circuit using Fritzing.
+	

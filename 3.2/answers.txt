@@ -1,0 +1,38 @@
+1. What is a RGB LED?
+	RGB LED stands for Red Green Blue Light Emitting Diode. it's actually a combination of three light emitting diodes, one for each frequency. These colors match the colors the cones in your eyes are sensitive to, which allows us to trick our brains into thinking they can make any color.
+2. What is the function of the different pins?
+	There are four pins in the RGB LED that we have received. these are:
+		1. a pin to power the red   diode with
+		2. a pin to power the green diode with
+		3. a pin to power the blue  diode with
+		4. a common ground pin, which should be connected to the ground of the circuit. Because it acts as the ground of the three diodes, it is the perfect place to put a resistor after
+3. what is PWM?
+	PWM stands for Pulse Width Modulator. It can be used to modulate a current by switching between letting current through and not.
+4. Which parameters can be configured for PWM?
+	the two parameters that can be set for PWM are:
+		duty cycle : the fraction of time the PWM lets current through per period. this is written as a percentage
+		length of the period: the amount of time it takes for the PWM to switch to start letting current through again since the last time it started letting current through.
+5. How can PWM be used to control the intensity of the LED?
+	since our eyes don't measure light every instant, the intensity of light can appear lower if the LED are simply turned off fo a fraction of the time, even though they are as bright as LEDs that are constantly on. This is largely dependent on the duty cycle, though if the period is too long, our eyes will catch on to it actually being flashes of intense light.
+6. Which pins on the Nucleo F303RE are suitable for use with PWM?
+	The pins that support PWMOut are:
+		(arduino pins)
+		- A1 to A5
+		
+		- D0 to D5
+		- D7 to D12
+		- D14 and D15
+		
+		(morpho pins)
+		- PA_1 to PA_4
+		- PA_6 to PA_9
+		- PA_11 to PA_15
+		
+		- PB_0 and PB_1
+		- PB_3 to PB_9
+		- PB_13 to PB_15
+		
+		- PC_0 to PC_3
+		- PC_6 to PC_13
+		
+		- PF_0

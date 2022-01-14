@@ -1,0 +1,4 @@
+a:
+	almost 0, as most of the current will pass through R2
+b:
+	almost 75mA, as most of the current will pass through R1

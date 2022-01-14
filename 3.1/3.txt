@@ -1,0 +1,27 @@
+R_total:
+	R_total = U_total / I_total
+	R_total = 5V / 0.1A
+	R_total = 50Ω
+
+R_1:
+	1/R_total = 1/R_1 + 1/R_2
+	1/R_1 = 1/R_total - 1/R_2
+	R_1 = 1/(1/R_total - 1/R_2)
+	R_1 = 1/(1/50Ω - 1/150Ω)
+	R_1 = 75Ω
+
+U_1 & U_2:
+	U_total = U_1 = U_2
+	5V = U_1 = U_2
+	U_1 = 5V
+	U_2 = 5V
+
+I_1:
+	I_1 = U_1 / R_1
+	I_1 = 5V / 75Ω
+	I_1 = 6.666...e-2 ≈ 66mA
+
+I_2:
+	I_2 = U_2 / R_2
+	I_2 = 5V / 150Ω
+	I_2 = 3.333...e-2 ≈ 33mA

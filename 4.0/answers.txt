@@ -1,0 +1,17 @@
+1. The schematics above show the MCP23S08 component. What kind of component is that?
+What does it do?
+	the MCP23S08 is a chip that provides some extra bidirectional PGIO pins that can be written to and read from using its interface (further explained in 2).
+2. The MCP23S08 component has a digital interface that uses the pins SCK, SI, SO, nCS. What
+type of interface is this (SPI/I2C/UART)?
+	These pins are known to be used with the SPI interface. These pins stand for:
+		SCK: the clock of the signal, which the master device uses to control when data is sent and when it is received.
+		SO: Standing for Serial Output, this signal is used by the master device to send data to other devices
+		SI: Standign for Serial Input, this signal is used by slave devices to send data to the master device
+		nCS: standing for Chip Select, this signal is used by the master device to signal which chip to converse with.
+3. The MCP23S08 uses an address. What is the value of the address byte?
+	the byte used to address MCP23S08 chips are (in binary) 01000xxb, where the Xs are set via two pins as to minimize the chance of conflict with other chips with an identical address. the 'b' bit of this byte is used to tell the chip whether to read or write to a register.
+4. The GPIO pins of the MCP23S08 can be used as input or output. To control the LEDs, they must be configured as output. Which register must be written to, to configure all pins as output?
+	The IODIR register can be written to to set the mode of the pins to either be an input (1) or output (0) pin. This register is addressed with address 00h. so the value that needs to be written to configure all pins as output is 00h.
+5. To control the LEDs, a value has to be written to the GPIO pins of the MCP23S08. Which
+register must be written to control the LEDs?
+	the GPIO register can be written to to set the value of all the pins. This register is addressed with address 09h and the value ffh may be written to this register to pull all pins up
