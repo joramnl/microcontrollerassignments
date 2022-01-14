@@ -1,4 +1,0 @@
-Configuration     Pin 1    pin2     pin3    pin4 
-LED1 on           false    true     true    false
-LED2 on           true     false    false   true 
-Both LEDs off     false    false    false   false
