@@ -36,6 +36,10 @@ namespace mcp{
     void setSeq(MCPAddress startAddress, const char* value, size_t len);
     void getSeq(MCPAddress startAddress, char* value, size_t len);
     void updateSeq(MCPAddress startAddress, char* value, const char* carry, size_t len);
+
+    void toggleBit(MCPAddress address, char bit);
+    void setBit(MCPAddress address, char bit, bool value);
+    bool getBit(MCPAddress address, char bit);
 }
 
 #endif // H_MCP23S08
