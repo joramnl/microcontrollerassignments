@@ -1,9 +1,24 @@
 #include <cstdio>
 #include <cstdint>
+#include "mbed.h"
 
 template<typename data_t>
 constexpr size_t index(data_t* base, data_t* elem){
     return (elem - base)/sizeof(data_t);
+}
+
+namespace sys{
+    static DigitalOut status(LED1,LOW);
+
+    class BusyMark final{
+        public:
+        inline BusyMark(){
+            status.write(HIGH);
+        }
+        inline ~BusyMark(){
+            status.write(LOW);
+        }
+    };
 }
 
 namespace bit{
