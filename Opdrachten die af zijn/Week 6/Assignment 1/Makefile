@@ -1,6 +1,6 @@
-all: cleanup firstname lastname firstname_objectfiles lastname_objectfiles compile
+all: cleanup firstname_array.h lastname_array.h firstname.o lastname.o generate_name
 
-firstname:
+firstname_array.h: firstname.txt
 	@echo -n  "Generating firstname_array.h... "
 	@echo "#include <vector>" > firstname_array.h
 	@echo "#include <string>" >> firstname_array.h
@@ -9,7 +9,7 @@ firstname:
 	@echo "}; " >> firstname_array.h
 	@echo "Done"
 
-lastname:
+lastname_array.h: lastname.txt
 	@echo -n  "Generating lastname_array.h... "
 	@echo "#include <vector>" > lastname_array.h
 	@echo "#include <string>" >> lastname_array.h
@@ -18,20 +18,22 @@ lastname:
 	@echo "}; " >> lastname_array.h
 	@echo "Done"
 
-firstname_objectfiles:
+firstname.o: firstname_array.h firstname.cpp
 	@echo -n "Generating object files for firstname... "
 	@g++ -Wall -g -c firstname.cpp -o firstname.o
 	@echo "Done"
 
-lastname_objectfiles:
+lastname.o: lastname_array.h lastname.cpp
 	@echo -n "Generating object files for lastname... "
 	@g++ -Wall -g -c lastname.cpp -o lastname.o
 	@echo "Done"
 
-compile:
+generate_name: firstname.o lastname.o main.cpp
 	@echo -n "Compiling into executable... "
 	@g++ -std=c++11 -Wall -o generate_name firstname.o lastname.o main.cpp
 	@echo "Done"
+
+compile: generate_name
 
 cleanup:
 	@echo -n "Cleaning up... "
