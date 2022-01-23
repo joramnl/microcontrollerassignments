@@ -1,2 +1,0 @@
-1. Determine which pins you will be using to control the LEDs and to read the status of the push buttons.
-	i will be using GPIO0, PGIO2 and PGIO3 for the LEDs and GPIO4 and GPIO5 for the buttons
